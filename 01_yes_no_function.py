@@ -1,21 +1,16 @@
-from pickle import FALSE
-
-
 def yes_no(question):
     valid = False
     while not valid:
+        
         response = input("have u played before").lower()
 
-        yes = ["yes", "y", "ye"]
-        no = ["no", "n"]
-
         # If they say yes, output 'program continues'
-        if response in yes:
+        if response == "yes" or response == "y":
             response = "yes"
             return response
 
 
-        elif response in no:
+        elif response == "no" or response == "n":
             response = "no"
             return response
 
