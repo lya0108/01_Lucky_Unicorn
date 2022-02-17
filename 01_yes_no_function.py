@@ -1,23 +1,25 @@
-def yes_no(question):
+from tokenize import maybe
+
+
+def yes_no():
+
     valid = False
     while not valid:
         
         yes = ["yes", "y", "ye"]
-        no = ["no", "n"]
-        
-        response = input(question).lower()
+        no = ["no", "n", "nah"]
 
-        # If they say yes, output 'program continues'
+        response = input("have you played before ").lower()
+
         if response in yes:
             return "yes"
-
 
         elif response in no:
             return "no"
 
-        # If they say no, output 'program instructions'
         else:
+            print("Please type yes / no ")
             print()
-            print("Please answer yes / no")
 
-show_instructions = yes_no("have you played before ")
+answer = yes_no()
+print("you chose", answer)
