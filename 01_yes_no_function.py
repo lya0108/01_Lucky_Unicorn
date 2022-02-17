@@ -1,7 +1,4 @@
-from tokenize import maybe
-
-
-def yes_no():
+def yes_no(question):
 
     valid = False
     while not valid:
@@ -9,17 +6,28 @@ def yes_no():
         yes = ["yes", "y", "ye"]
         no = ["no", "n", "nah"]
 
-        response = input("have you played before ").lower()
+        response = input(question).lower()
 
         if response in yes:
-            return "yes"
+            response = "yes"
+            return response
 
         elif response in no:
-            return "no"
+            response = "no"
+            return response
 
         else:
             print("Please type yes / no ")
             print()
 
-answer = yes_no()
-print("you chose", answer)
+# Main Routine 
+instructions = yes_no("Have u played this game before? ")
+print("you chose {}".format(instructions))
+print()
+fun = yes_no("Having fun? ")
+if fun == "no":
+    print("{} is incorrect".format(fun))
+elif fun == "yes":
+    print("You said {} to having fun".format(fun))
+
+    
