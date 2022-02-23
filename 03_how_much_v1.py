@@ -15,7 +15,7 @@ while not valid:
 
         # if the amount is too low / high give
         if 0 < response <= 10:
-            print("You have asked to play with ${}".format(response))
+            print("You have asked to play with ${}\n".format(response))
 
         # output an error
         else:
