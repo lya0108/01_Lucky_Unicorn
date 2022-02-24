@@ -71,6 +71,9 @@ played_before = yes_no("Have u played this game before? ")
 
 if played_before == "no":
     instructions()
+print()
 
-print("pogram continues")
+# ask how much they wish to play with
+how_much = num_check("How much would you like play with? ", 0, 10)
 
+print("You are spending ${}\n".format(how_much))
