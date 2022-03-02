@@ -9,7 +9,7 @@ for item in range(0,10):
     chosen_num = random.randint(1,10000)
     
     
-    # adjusts balance
+    # adjusts balance                                                                                                                                                                                
     if 1 <= chosen_num <= 500:
         chosen = "unicorn"
         balance += 4
