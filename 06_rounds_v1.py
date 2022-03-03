@@ -9,7 +9,8 @@ while play_again == "":
     rounds_played += 1
 
     # print round number
-    print(rounds_played)
+    print()
+    print("~~~ Round #{} ~~~".format(rounds_played))
     balance -= 1
     print("Balance: ", balance)
     print()
@@ -19,3 +20,5 @@ while play_again == "":
         print("Sorry you are broke")
     else:
         play_again = input("Press <Enter> to play again or 'xxx' to quit ")
+
+    
