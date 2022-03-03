@@ -57,6 +57,7 @@ def instructions():
     print("Golden Unicorn: $201.00 (balance increases by $200)")
     print()
     print()
+    print("To quit while you are ahead, type 'xxx' instead of pressing <enter>")
     return ""
 
 def num_check(question, low, high):
@@ -87,6 +88,8 @@ if played_before == "no":
     instructions()
 print()
 
+decorator("Let's Begin", "~", "3")
+
 # ask how much they wish to play with
 how_much = num_check("How much would you like play with? ", 0, 10)
 
@@ -102,7 +105,7 @@ while play_again == "":
     # print round number
     print()
     decorator("Round #{}".format(rounds_played), "~", "1")
-    
+    print()
     chosen_num = random.randint(1,10000)
     
     
@@ -110,34 +113,51 @@ while play_again == "":
     if 1 <= chosen_num <= 500:
         chosen = "unicorn"
         balance += 4
+        deco = "U"
+
     elif 3603 < chosen_num <= 4103:
         chosen = "foal"
         balance += 2
+        deco = " F"
+
     elif 500 < chosen_num <= 3600:
         chosen = "donkey"
         balance -= 1
+        deco = "D"
+
     elif 3600 < chosen_num <= 3602:
         chosen = "mule"
         balance -= 100
+        deco = "M"
+
     elif 3602 < chosen_num <= 3603:
         chosen = "golden unicorn"
         balance += 200
+        deco = "!"
+
     else:
         if chosen_num % 2 == 0:
             chosen = "horse"
+            deco = "H"
         else:
             chosen = "zebra"
+            deco = "Z"
         balance -= 0.5
-    
-    print("you got a {}. your balance is ${:.2f}".format(chosen, balance))
     
     if balance < 1:
         play_again = "xxx"
-        print("Sorry you are broke")
+        print()
+        decorator("Sorry, you are broke", "=", "3")
     else:
+        print()
         play_again = input("Press <Enter> to play again or 'xxx' to quit ")
+        
+    outcome = "you got a {}. your balance is ${:.2f}".format(chosen, balance)
+    decorator(outcome, deco, "3")
 
 # output
 print()
+decorator("Results", "~", "3")
 print("Final Balance: ${:.2f}".format(balance))
+print("Thank you for playing")
 print()
